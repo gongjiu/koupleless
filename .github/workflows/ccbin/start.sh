@@ -39,7 +39,7 @@ for TEST_DIR in $(find $(pwd) -name "$suiteReg");do
   echo "TESTAPP_DIR=$TESTAPP_DIR"
   cd ${TESTAPP_DIR}
   mvn clean install -U -Dmaven.test.skip=true
-  for BaseDir in $( find $(pwd)  -type d -name "*base" |grep -v src|grep -v target|grep -v mybatis|grep -v logs|grep -v "base/redis/base"|grep -v rocketmq|grep -v "samples/service/base");do
+  for BaseDir in $( find $(pwd)  -type d -name "*base" |grep -v src|grep -v apollo |grep -v tomcat |grep -v target|grep -v mybatis|grep -v logs|grep -v dubbo3base|grep -v kafka|grep -v webflux);do
     echo "BaseDir $BaseDir"
     export BaseDir=$BaseDir
     cd $BaseDir
